@@ -5,7 +5,9 @@
 </head>
 <body>
     <input type="text" id="message"/>
-    <input type="button" id="send" value="Send message"/>
+    <input type="button" id="send" value="Broadcast message"/>
+    <input type="button" id="onlyToMe" value="Note to self"/>
+    <input type="button" id="toEveryoneElse" value="To everybody else"/>
     <ul id="messages"></ul>
     
     <script src="Scripts/jquery-1.6.4.min.js"></script>
@@ -23,6 +25,14 @@
                 $('#send').click(function() {
                     var message = $('#message').val();
                     chatHub.server.send(message);
+                });
+                $('#onlyToMe').click(function () {
+                    var message = $('#message').val();
+                    chatHub.server.onlyToMe(message);
+                });
+                $('#toEveryoneElse').click(function () {
+                    var message = $('#message').val();
+                    chatHub.server.toEveryoneElse(message);
                 });
             });
         });
