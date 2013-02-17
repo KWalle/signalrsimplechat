@@ -4,6 +4,28 @@
     <title></title>
 </head>
 <body>
+    <input type="text" id="message"/>
+    <input type="button" id="send" value="Send message"/>
+    <ul id="messages"></ul>
+    
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/jquery.signalR-1.0.0-rc2.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function() {
+            var chatHub = $.connection.chatHub;
 
+            chatHub.client.sendMessage = function(message) {
+                $('#messages').append('<li>' + message + '</li>');
+            };
+
+            $.connection.hub.start().done(function() {
+                $('#send').click(function() {
+                    var message = $('#message').val();
+                    chatHub.server.send(message);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
