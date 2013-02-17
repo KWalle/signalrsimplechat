@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Advanced Chat</title>
+</head>
+<body>
+    <input type="text" id="message"/>
+    <input type="button" id="send" value="Broadcast message"/>
+    <input type="hidden" id="userName" />
+    <ul id="messages"></ul>
+    
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/jquery.signalR-1.0.0-rc2.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function() {
+            var chatHub = $.connection.advancedChatHub;
+
+            chatHub.client.sendChatMessage = function (message) {
+                $('#messages').append('<li><strong>' + message.UserName + '</strong>: ' + message.Message + '</li>');
+            };
+
+            $('#userName').val(prompt('Enter your name:', ''));
+            
+            $.connection.hub.start().done(function() {
+                $('#send').click(function() {
+                    var message = $('#message').val();
+                    var user = $('#userName').val();
+                    
+                    chatHub.server.sendMessage({
+                        userName: user,
+                        message: message
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
