@@ -1,0 +1,9 @@
+﻿<Window x:Class="TimerDispatcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button x:Name="btnStartTimer" Content="Start timer" Click="btnStartTimer_Click_1" Height="150"></Button>
+        <Button x:Name="btnStopTimer" Content="Stop timer" Click="btnStopTimer_Click_1" Height="150"></Button>
+    </StackPanel>
+</Window>

@@ -5,6 +5,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="400" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -12,9 +13,11 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0">Beskjed:</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="Message"></TextBox>
-        <Button Grid.Row="0" Grid.Column="2" x:Name="Send" Content="Send message"></Button>
-        <TextBlock Grid.Row="1" x:Name="Messages" Grid.ColumnSpan="3" Background="AntiqueWhite"></TextBlock>
+        <Label Grid.Row="0" Grid.Column="0">Tid</Label>
+        <Label Grid.Row="0" Grid.Column="1" x:Name="serverTime"></Label>
+        <Label Grid.Row="1" Grid.Column="0">Beskjed:</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="Message"></TextBox>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="Send" Content="Send message"></Button>
+        <TextBlock Grid.Row="2" x:Name="Messages" Grid.ColumnSpan="3" Background="AntiqueWhite"></TextBlock>
     </Grid>
 </Window>

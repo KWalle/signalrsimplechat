@@ -22,10 +22,16 @@ namespace WpfSimpleChatClient
             var chatHub = hubConnection.CreateHubProxy("chatHub");
 
             chatHub.On<string>("sendMessage", (message) => Dispatcher.Invoke(DispatcherPriority.Normal, new Action<string>(AddMessage), message));
+            chatHub.On<string>("sendServerTime", (message) => Dispatcher.Invoke(DispatcherPriority.Normal, new Action<string>(AddServerTime), message));
 
             await hubConnection.Start();
 
             Send.Click += (sender, args) => chatHub.Invoke("Send", "WPF said:" + Message.Text);
+        }
+
+        private void AddServerTime(string message)
+        {
+            serverTime.Content = message;
         }
 
         private void AddMessage(string obj)
