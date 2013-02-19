@@ -15,7 +15,8 @@
         <script src="Scripts/jquery.signalR-1.0.0.min.js"></script>
         <script src="/signalr/hubs"></script>
         <script type="text/javascript">
-            $(function() {
+            $(function () {
+                $.connection.hub.logging = true;
                 var chatHub = $.connection.chatHub;
 
                 chatHub.client.sendMessage = function(message) {
