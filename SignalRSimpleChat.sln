@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSimpleChatClient", "WpfS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerDispatcher", "TimerDispatcher\TimerDispatcher.csproj", "{718E9496-02AD-49E7-B8B4-012E479EEA9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistentConnectionSample", "PersistentConnectionSample\PersistentConnectionSample.csproj", "{A03B69D2-14A4-4D74-9A6B-EFE530BA1487}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{718E9496-02AD-49E7-B8B4-012E479EEA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{718E9496-02AD-49E7-B8B4-012E479EEA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{718E9496-02AD-49E7-B8B4-012E479EEA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03B69D2-14A4-4D74-9A6B-EFE530BA1487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03B69D2-14A4-4D74-9A6B-EFE530BA1487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03B69D2-14A4-4D74-9A6B-EFE530BA1487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03B69D2-14A4-4D74-9A6B-EFE530BA1487}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
